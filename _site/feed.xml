@@ -5,51 +5,57 @@
     <description>sunny小亚男的博客</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Oct 2015 17:01:08 +0800</pubDate>
-    <lastBuildDate>Mon, 19 Oct 2015 17:01:08 +0800</lastBuildDate>
+    <pubDate>Mon, 19 Oct 2015 18:02:23 +0800</pubDate>
+    <lastBuildDate>Mon, 19 Oct 2015 18:02:23 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>ios自动化测试入门之录制回放功能</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#instrument&quot; id=&quot;markdown-toc-instrument&quot;&gt;打开instrument&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;创建模版&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#target&quot; id=&quot;markdown-toc-target&quot;&gt;选择工程target&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;点击录制&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#instrument&quot; id=&quot;markdown-toc-instrument&quot;&gt;打开instrument&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;创建模版&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#target&quot; id=&quot;markdown-toc-target&quot;&gt;选择工程target&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;点击录制&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;instrument&quot;&gt;打开instrument&lt;/h2&gt;
+&lt;h3 id=&quot;instrument&quot;&gt;打开instrument&lt;/h3&gt;
 
-&lt;p&gt;点击标题栏product下的profile或者windows+i打开instrument&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;点击标题栏product下的profile或者windows+i打开instrument&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/ios-ui-automation-01-01.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/ios-ui-automation-01-01.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;创建模版&lt;/h3&gt;
 
-&lt;p&gt;点击“automation”创建模版&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;点击“automation”创建模版&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/ios-ui-automation-01-02.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/ios-ui-automation-01-02.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;打开之后，就已经自动创建了一个js脚本文件，如果想要新建一个脚本文件或者导入一个已有的脚本文件，可以通过以下入口进行创建或者导入&lt;/p&gt;
+&lt;p&gt; 打开之后，就已经自动创建了一个js脚本文件，如果想要新建一个脚本文件或者导入一个已有的脚本文件，可以通过以下入口进行创建或者导入&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/ios-ui-automation-01-03.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/ios-ui-automation-01-03.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;target&quot;&gt;选择工程target&lt;/h3&gt;
-&lt;p&gt;可以选择在模拟器上也可以选择在真机上运行，选择对应的机型即可。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;可以选择在模拟器上也可以选择在真机上运行，选择对应的机型即可。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/ios-ui-automation-01-04.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/ios-ui-automation-01-04.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;点击录制&lt;/h3&gt;
 
-&lt;p&gt;点击脚本文件下方的红色按钮开始录制脚本，此时在模拟器或者真机上操作即可，脚本录制结束后，点击其左侧的运行按钮即可运行录制的脚本。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;点击脚本文件下方的红色按钮开始录制脚本，此时在模拟器或者真机上操作即可，脚本录制结束后，点击其左侧的运行按钮即可运行录制的脚本。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../images/ios-ui-automation-01-05.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/ios-ui-automation-01-05.png&quot; alt=&quot;Alt test&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 26 Jul 2015 22:06:05 +0800</pubDate>
