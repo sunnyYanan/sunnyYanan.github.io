@@ -15,7 +15,7 @@ icon: glyphicon-heart
 
 ### 联系我
 
-* email：[523566738@qq.com](mailto:{{ site.email }})
+* email：[zhangyanan1230@gmail.com](mailto:{{ site.email }})
 * QQ：523566738
 * Weibo：[yanan](http://weibo.com/1738232024/profile?topnav=1&wvr=6)
 
