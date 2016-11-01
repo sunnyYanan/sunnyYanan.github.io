@@ -34,7 +34,7 @@ email: 邮箱地址
 author: 作者名
 url: 个人网站
 ### baseurl修改为项目名，如果项目是'***.github.io'，则设置为空''
-baseurl: ""
+baseurl: "/LessOrMore"
 resume_site: 个人简历网站
 github: github地址
 github_username: github用户名称
