@@ -11,6 +11,9 @@ meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;�
 motto: It's our wits that make us men.
 banner: 学而不思则罔，思而不学则殆。
 
+# Gems
+gems: [jekyll-paginate]
+
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
 paginate: 10
