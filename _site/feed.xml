@@ -5,9 +5,50 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Nov 2016 17:51:30 +0800</pubDate>
-    <lastBuildDate>Tue, 01 Nov 2016 17:51:30 +0800</lastBuildDate>
+    <pubDate>Wed, 02 Nov 2016 09:56:22 +0800</pubDate>
+    <lastBuildDate>Wed, 02 Nov 2016 09:56:22 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>建立网站过程中遇到的问题</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;参考网址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;问题&lt;/h2&gt;
+
+&lt;p&gt;1、执行jekyll server后运行不起来，提示rouge错误，其实是环境没有配好，重新安装了jekyll后OK&lt;/p&gt;
+
+&lt;p&gt;2、提示未配置分页，解决方式为在_config.yml中配置&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Gems
+gems: [jekyll-paginate]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3、markdown解释器，由于本模版使用了kramdown解释器，故而需要安装该解释器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install jekyll rdiscount
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;参考网址&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://alfred-sun.github.io/blog/2014/12/05/github-pages/&quot;&gt;搭建运行配置全教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.uisdc.com/photoshop-matting-techniques&quot;&gt;为了更改logo图片使用的ps抠图教程&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/01/build-the-web/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/01/build-the-web/</guid>
+        
+        <category>教程</category>
+        
+        
+        <category>document</category>
+        
+      </item>
     
       <item>
         <title>如何使用LessOrMore这个Jekyll模版</title>
@@ -23,7 +64,6 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-7&quot; id=&quot;markdown-toc-section-7&quot;&gt;为什么重复造轮子&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-8&quot; id=&quot;markdown-toc-section-8&quot;&gt;关于作者&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-9&quot; id=&quot;markdown-toc-section-9&quot;&gt;关于打赏&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;致谢&lt;/h1&gt;
@@ -108,11 +148,6 @@ tag: 教程
 
 &lt;p&gt;热爱开源，热爱折腾的Java程序猿。更多个人信息和联系方式可以参照&lt;a href=&quot;http://www.hifreud.com/Resume.io/&quot;&gt;我的简介&lt;/a&gt;。&lt;/p&gt;
 
-&lt;h1 id=&quot;section-9&quot;&gt;关于打赏&lt;/h1&gt;
-
-&lt;p&gt;如果你也像我一样在寻觅一个简洁的博客主题。不妨试下LessOrMore。&lt;/p&gt;
-
-&lt;p&gt;当然你也可以为了我的工作打赏！以激励我做出更好的东西。&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Aug 2016 01:08:00 +0800</pubDate>
         <link>http://localhost:4000/2016/08/27/how-to-use-this-jekyll-theme/</link>
@@ -122,84 +157,6 @@ tag: 教程
         
         
         <category>document</category>
-        
-      </item>
-    
-      <item>
-        <title>我面试过的上百个候选者中成功的人总会做的事情</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;充分的准备，知道哪些事情是想要让面试官知道的。&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;了解你的听众，组织你的回答语言。&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;保持冷静，记住这次面试是双向的。&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;本文翻译自&lt;a href=&quot;https://www.linkedin.com/&quot;&gt;Linked In&lt;/a&gt;，作者Minal Mehta&lt;/p&gt;
-
-&lt;p&gt;原文地址 &lt;a href=&quot;http://www.linkedin.com/pulse/20141002164029-1473578-how-to-win-an-interview-before-it-starts?midToken=AQH6jyhMOpWb0g&amp;amp;trk=eml-b2_content_ecosystem_digest-recommended_articles-74-null&amp;amp;fromEmail=fromEmail&amp;amp;ut=3Sa86TzhqLj6s1&quot;&gt;I’ve Interviewed 100s of Candidates and the Ones I Hire Always Do This&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;面试是很有压力的一件事，通常，你只有不到一个小时的时间来使面试官相信你是所有候选者中最合适那一个。这个面试官很有可能还会在当天面试其他的候选者并且还有其他的事情要做。那你如何才能够脱颖而出呢。&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;充分的准备，知道哪些事情是想要让面试官知道的。&lt;/h1&gt;
-
-&lt;p&gt;通过上百个我做组织的面试者们，我发现最合适的那些面试者永远都是表达最清晰的。&lt;/p&gt;
-
-&lt;p&gt;所有人都知道充足的准备是必要的，但是如何准备是极其重要的，许多人会准备一份面试题和答案的合集，这导致一部分人在遇到合集以外的问题的时候会恐慌（我见过许多人恐慌或者说“这是一个好问题”，当我面试别人或者帮助那些学生准备面试的时候）&lt;/p&gt;
-
-&lt;p&gt;以下是我的建议：以最近的记忆最清晰的工作流程开始。通过阅读他们的信息或者询问那些你知道的在这工作的朋友来调查面试的公司和职位，了解他们正在寻找一个拥有什么样能力和文化的人&lt;/p&gt;
-
-&lt;p&gt;了解自己，你自己最擅长什么？怎么让你自身如何与公司正在找的人相匹配？这个过程会让你有一个清晰的定位，知道这个公司的职位是不是真的适合你。假设是的，你的自身能力跟这个职位相匹配，你同样知道自己的不足在哪。&lt;/p&gt;
-
-&lt;p&gt;从你过往工作经历中找出你突出的贡献，那些你已经确定了你的能力和工作要求相交集的部分。并且，找出一些事情来证明你可以改善你不足的方面。通常，你想出来的这几件事件可以重新组装利用来彰显不同方面的能力。&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;了解你的听众，组织你的回答语言。&lt;/h1&gt;
-
-&lt;p&gt;我推荐使用排序的组织来确保你的面试官可以理解你的表述。我是STAR方法的忠实粉丝：Situation处境（场景再现），Task任务（必须要做到的），Action行动（你实际做的），Result结果（发生了什么）&lt;/p&gt;
-
-&lt;p&gt;场景再现是最重要的，虽然你很清楚发生了什么，但是面试官不知道，花些时间来确保他们可以设身处地的知道当时的情况。如果你不这么做，剩下的故事将是对牛弹琴。&lt;/p&gt;
-
-&lt;p&gt;我个人也一直将同样的方法用在各种面试中。“如果你处在一个特定的情境下，你会怎么做？” 花点时间去建立一个共享的空间，让面试官了解情况，然后你们才能一起来聊需要做什么。&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;保持冷静，记住这次面试是双向的。&lt;/h1&gt;
-
-&lt;p&gt;深呼吸然后记住这只是一次谈话，面试官给你一个评价是很重要的，但是同样重要的是你也要给面试官一个评价，并且确认这是你想要工作的地方。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 20 Dec 2014 20:05:00 +0800</pubDate>
-        <link>http://localhost:4000/2014/12/20/I-ve-Interviewed-100s-of-Candidates-and-the-Ones-I-Hire-Always-Do-This/</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/12/20/I-ve-Interviewed-100s-of-Candidates-and-the-Ones-I-Hire-Always-Do-This/</guid>
-        
-        <category>interview</category>
-        
-        
-        <category>翻译文章</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;诫子书&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;First POST build by Jekyll.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;诫子书&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/styles/images/jiezishu.jpg&quot; alt=&quot;诫子书&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot;&gt;诸葛亮&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;夫君子之行，静以修身，俭以养德。非淡泊(澹泊)无以明志，非宁静无以致远。夫学须静也，才须学也。非学无以广才，非志无以成学。淫慢则不能励精，险躁则不能冶性。
-年与时驰，意与日去，遂成枯落，多不接世，悲守穷庐，将复何及！&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 17 Nov 2014 13:31:01 +0800</pubDate>
-        <link>http://localhost:4000/2014/11/17/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/11/17/welcome-to-jekyll/</guid>
-        
-        <category>jekyll</category>
-        
-        
-        <category>jekyll</category>
         
       </item>
     
