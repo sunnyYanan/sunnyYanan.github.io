@@ -20,10 +20,11 @@ tag: 教程
 gems: [jekyll-paginate]
 ```
 
-3、markdown解释器，由于本模版使用了kramdown解释器，故而需要安装该解释器
+3、markdown解释器，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上
 
 ```
 $ gem install jekyll rdiscount
+$ gem install kramdown
 ```
 
 参考网址
