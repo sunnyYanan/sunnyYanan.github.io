@@ -5,9 +5,99 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Nov 2016 10:03:13 +0800</pubDate>
-    <lastBuildDate>Wed, 02 Nov 2016 10:03:13 +0800</lastBuildDate>
+    <pubDate>Thu, 03 Nov 2016 19:40:34 +0800</pubDate>
+    <lastBuildDate>Thu, 03 Nov 2016 19:40:34 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>杂七杂八</title>
+        <description>
+&lt;p&gt;总有些事&lt;/p&gt;
+
+&lt;p&gt;是你知道不可为&lt;/p&gt;
+
+&lt;p&gt;而必须为&lt;/p&gt;
+
+&lt;p&gt;有些事&lt;/p&gt;
+
+&lt;p&gt;是你想为之&lt;/p&gt;
+
+&lt;p&gt;却不能为&lt;/p&gt;
+
+&lt;p&gt;更可怕的是&lt;/p&gt;
+
+&lt;p&gt;你不想为&lt;/p&gt;
+
+&lt;p&gt;却必须为&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/03/thinking-during-work/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/03/thinking-during-work/</guid>
+        
+        <category>小诗</category>
+        
+        
+        <category>杂想</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS ui testing初探</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;背景&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;入门&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;遇到的问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;背景&lt;/h2&gt;
+&lt;p&gt;  xcode7发布后，引入了ui testing这一个新的ui测试框架，原有的ui automation慢慢地也不再维护了。在xcode 8中官方直接抛弃了ui automation（启动instrument后会发现，这个入口被完全拿掉了）。这就使得我们原有的基于ui automation搭建起来的ui自动化持续集成方式在iOS10上变得不可用，本地xcode如果升级xcode8后，脚本也不能维护编写了。
+由于现在iOS10系统的占有量已经超过了50%，因此需要将原有的UI自动化思路迁移到UI testing上面。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;入门&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;新建uitesting
+    &lt;ul&gt;
+      &lt;li&gt;如果已有一个工程，只需要新建一个工程对应的UI target,路径🈶️2种
+        &lt;ol&gt;
+          &lt;li&gt;切换到test模块，点击左下角的＋，New UI Test Target&lt;/li&gt;
+          &lt;li&gt;File － New － Target － Test － iOS UI Testing Bundle&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;如果是新建工程，则可以自动生成一个uitesting的target，这是一个类似于单测的存在&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;脚本录制
+    &lt;ul&gt;
+      &lt;li&gt;新建target之后，会默认带有一个.m或者.swift文件，取决于建立target时，选择的是oc 或swift，不过凭借苹果的这个尿性，还是建议用swift写。&lt;/li&gt;
+      &lt;li&gt;点击该.m／.swift文件，在文件下方有一个红色的按钮，点击该按钮即可进行脚本的录制&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;脚本运行
+    &lt;ul&gt;
+      &lt;li&gt;录制或者编写代码后，可commond+u运行测试代码。在test模块可查看运行结果&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;遇到的问题&lt;/h2&gt;
+&lt;p&gt;1、录制完成后直接运行脚本，提示：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;No architectures to compile for (ONLY_ACTIVE_ARCH=YES, active arch=x86_64, VALID_ARCHS=i386)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 解决方法：在build setting中的Valid Architectures加入arm64即可&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/03/iOS-ui-test-first-try/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/03/iOS-ui-test-first-try/</guid>
+        
+        <category>ui testing</category>
+        
+        
+        <category>iOS测试</category>
+        
+      </item>
     
       <item>
         <title>建立网站过程中遇到的问题</title>
@@ -20,6 +110,10 @@
 
 &lt;p&gt;1、执行jekyll server后运行不起来，提示rouge错误，其实是环境没有配好，重新安装了jekyll后OK&lt;/p&gt;
 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;p&gt;2、提示未配置分页，解决方式为在_config.yml中配置&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Gems
@@ -27,10 +121,9 @@ gems: [jekyll-paginate]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;3、markdown解释器，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上&lt;/p&gt;
+&lt;p&gt;3、markdown解释器，Jekyll默认用maruku来解析markdown语言，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install jekyll rdiscount
-$ gem install kramdown
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install rdiscount kramdown
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -47,7 +140,7 @@ $ gem install kramdown
         <category>教程</category>
         
         
-        <category>document</category>
+        <category>文档</category>
         
       </item>
     
@@ -157,7 +250,7 @@ tag: 教程
         <category>教程</category>
         
         
-        <category>document</category>
+        <category>文档</category>
         
       </item>
     

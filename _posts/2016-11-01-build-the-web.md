@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  建立网站过程中遇到的问题
-categories: document
+categories: 文档
 tag: 教程
 ---
 
@@ -13,6 +13,10 @@ tag: 教程
 
 1、执行jekyll server后运行不起来，提示rouge错误，其实是环境没有配好，重新安装了jekyll后OK
 
+```
+$ gem install jekyll
+```
+
 2、提示未配置分页，解决方式为在_config.yml中配置
 
 ```
@@ -20,11 +24,10 @@ tag: 教程
 gems: [jekyll-paginate]
 ```
 
-3、markdown解释器，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上
+3、markdown解释器，Jekyll默认用maruku来解析markdown语言，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上
 
 ```
-$ gem install jekyll rdiscount
-$ gem install kramdown
+$ gem install rdiscount kramdown
 ```
 
 参考网址

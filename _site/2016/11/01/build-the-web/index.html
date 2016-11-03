@@ -96,7 +96,7 @@
 <div class="banner">
   <div class="container">
   	
-    	<a href="/categories/#document-ref">document</a>	/
+    	<a href="/categories/#文档-ref">文档</a>	/
     	<a href="/tag/#教程-ref">教程</a>
     
   </div>
@@ -122,6 +122,32 @@
         <li><a href="#year_2016">2016</a>
           <ul class="nav">
             <li><a href="#month_2016_November">November</a></li>
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
       
 
       
@@ -170,6 +196,10 @@
 
 <p>1、执行jekyll server后运行不起来，提示rouge错误，其实是环境没有配好，重新安装了jekyll后OK</p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install jekyll
+</code></pre>
+</div>
+
 <p>2、提示未配置分页，解决方式为在_config.yml中配置</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code># Gems
@@ -177,10 +207,9 @@ gems: [jekyll-paginate]
 </code></pre>
 </div>
 
-<p>3、markdown解释器，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上</p>
+<p>3、markdown解释器，Jekyll默认用maruku来解析markdown语言，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install jekyll rdiscount
-$ gem install kramdown
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install rdiscount kramdown
 </code></pre>
 </div>
 
