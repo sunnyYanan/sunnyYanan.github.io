@@ -5,9 +5,30 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Nov 2016 19:40:34 +0800</pubDate>
-    <lastBuildDate>Thu, 03 Nov 2016 19:40:34 +0800</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 14:10:35 +0800</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 14:10:35 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>一些好用的前端开发插件</title>
+        <description>
+&lt;p&gt;&lt;a href=&quot;http://fontawesome.dashgame.com/&quot;&gt;完备的图标库fontawesome&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jqueryfuns.com/resource/view/1361&quot;&gt;包含各种好用插件的inspinia&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/benben77/p/4679753.html&quot;&gt;自动的网页加载进度条插件pace.js&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 07 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/07/some-plugins-in-front-developing/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/07/some-plugins-in-front-developing/</guid>
+        
+        <category>前端开发插件</category>
+        
+        
+        <category>前端开发</category>
+        
+      </item>
     
       <item>
         <title>杂七杂八</title>
