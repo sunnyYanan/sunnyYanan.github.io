@@ -5,18 +5,24 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2016 14:10:35 +0800</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2016 14:10:35 +0800</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2016 21:03:58 +0800</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2016 21:03:58 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
-        <title>一些好用的前端开发插件</title>
+        <title>一些好用的前端开发插件/工具</title>
         <description>
-&lt;p&gt;&lt;a href=&quot;http://fontawesome.dashgame.com/&quot;&gt;完备的图标库fontawesome&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://fontawesome.dashgame.com/&quot;&gt;完备的图标库fontawesome&lt;/a&gt;       &lt;a href=&quot;http://fontawesome.io/icons/&quot;&gt;以及它的英文网址&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.jqueryfuns.com/resource/view/1361&quot;&gt;包含各种好用插件的inspinia&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/benben77/p/4679753.html&quot;&gt;自动的网页加载进度条插件pace.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/cn/app/sip/id507257563?mt=12&quot;&gt;取色器sip&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://echarts.baidu.com/&quot;&gt;绘制图表工具echarts3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://fullcalendar.io/&quot;&gt;大日历插件fullcalendar&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 07 Nov 2016 00:00:00 +0800</pubDate>
