@@ -5,9 +5,52 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Nov 2016 21:03:58 +0800</pubDate>
-    <lastBuildDate>Tue, 08 Nov 2016 21:03:58 +0800</lastBuildDate>
+    <pubDate>Thu, 10 Nov 2016 18:01:51 +0800</pubDate>
+    <lastBuildDate>Thu, 10 Nov 2016 18:01:51 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>h5打开本地文件－走过的弯路</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;背景&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;背景&lt;/h2&gt;
+&lt;p&gt;想做个小工具，网页打开一个文件，分析这个文件里的内容，遇到了一些问题。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;1、使用h5的文件api，具体参照&lt;a href=&quot;https://www.html5rocks.com/zh/tutorials/file/dndfiles/&quot;&gt;这里&lt;/a&gt;，但是由于选择一个文本内容很多的文件的时候，页面有卡顿的现象，故以为js处理读取文件的时候是同步读取的，带着这样的一个假设之后，去寻找异步读取文件的方法。找到的比较好的方法是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;发送ajax请求
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;但是有一个问题就是，文件内容太大时，请求数据发送不过去，这时候就想发送文件的路径过去，然后再用java分析文件内容。这时候！坑爹的发现，js无法获取文件的完整路径，因为高版本的浏览器内核将文件路径进行了隐藏，格式都变成了c:/fakepath／x.xx的形式，这样就很不易用了（总不能让所有要使用这个工具的人，都去设置一下浏览器安全模式／或者建一个这样的目录吧）。重新找解决方案，然后在&lt;a href=&quot;http://ju.outofmemory.cn/entry/138159&quot;&gt;这篇文章&lt;/a&gt;中发现，filereader是异步读取内容的，那为什么当时会感觉到明显的卡顿呢，或许是因为为了验证是否正确的打开了文件，我用
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;
+console.log()
+ &lt;/code&gt;
+  的方式，打印文件的内容，导致控制台输出大文本内容的时候出现了卡顿。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;这个过程中，还考虑是不是把文件内容先保存到本地，异步分析后，再删除该文件。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;故而，重新修改了实现方式，仍然用filereader的方式，读取文件。哎！之所以这样，就是理解错了&lt;code class=&quot;highlighter-rouge&quot;&gt;filereader&lt;/code&gt;的读取方式！这时候体现了认真读官方文档的重要性！&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/10/js-read-file-problem/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/10/js-read-file-problem/</guid>
+        
+        <category>文件上传</category>
+        
+        
+        <category>前端开发</category>
+        
+      </item>
     
       <item>
         <title>一些好用的前端开发插件/工具</title>

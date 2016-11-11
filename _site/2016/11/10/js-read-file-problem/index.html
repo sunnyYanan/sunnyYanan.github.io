@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>一些好用的前端开发插件/工具</title>
+	<title>h5打开本地文件－走过的弯路</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
 
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
-	<link rel="canonical" href="/2016/11/07/some-plugins-in-front-developing/">
+	<link rel="canonical" href="/2016/11/10/js-read-file-problem/">
 	<link rel="alternate" type="application/rss+xml" title="Less Or More" href="/feed.xml">
 	
 	<meta name="description" content="物必自腐，然后虫生">
@@ -84,8 +84,8 @@
   <div class="container">
   	
   		<!--
-		    <h1>一些好用的前端开发插件/工具</h1>
-		    <p>Post on Nov 07, 2016 by <a href="/about">wendy zhang</a></p>
+		    <h1>h5打开本地文件－走过的弯路</h1>
+		    <p>Post on Nov 10, 2016 by <a href="/about">wendy zhang</a></p>
 		-->
 		    <h1>It's our wits that make us men.</h1>
     
@@ -97,7 +97,7 @@
   <div class="container">
   	
     	<a href="/categories/#前端开发-ref">前端开发</a>	/
-    	<a href="/tag/#前端开发插件-ref">前端开发插件</a>
+    	<a href="/tag/#文件上传-ref">文件上传</a>
     
   </div>
 </div>
@@ -205,27 +205,43 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">一些好用的前端开发插件/工具</h1>
+              <h1 class="post-title">h5打开本地文件－走过的弯路</h1>
               <!--
-                <p class="post-meta">Nov 7, 2016</p>
+                <p class="post-meta">Nov 10, 2016</p>
               -->
-              <div class="meta">Posted on <span class="postdate">Nov 07, 2016</span> By <a target="_blank" href="http://localhost:4000">wendy zhang</a></div>
+              <div class="meta">Posted on <span class="postdate">Nov 10, 2016</span> By <a target="_blank" href="http://localhost:4000">wendy zhang</a></div>
               <br />
             </header>
             <article class="post-content">
-              
-<p><a href="http://fontawesome.dashgame.com/">完备的图标库fontawesome</a>       <a href="http://fontawesome.io/icons/">以及它的英文网址</a></p>
+              <ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">背景</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">问题</a></li>
+</ul>
 
-<p><a href="http://www.jqueryfuns.com/resource/view/1361">包含各种好用插件的inspinia</a></p>
+<h2 id="section">背景</h2>
+<p>想做个小工具，网页打开一个文件，分析这个文件里的内容，遇到了一些问题。</p>
 
-<p><a href="http://www.cnblogs.com/benben77/p/4679753.html">自动的网页加载进度条插件pace.js</a></p>
+<h2 id="section-1">问题</h2>
+<p>1、使用h5的文件api，具体参照<a href="https://www.html5rocks.com/zh/tutorials/file/dndfiles/">这里</a>，但是由于选择一个文本内容很多的文件的时候，页面有卡顿的现象，故以为js处理读取文件的时候是同步读取的，带着这样的一个假设之后，去寻找异步读取文件的方法。找到的比较好的方法是：</p>
 
-<p><a href="https://itunes.apple.com/cn/app/sip/id507257563?mt=12">取色器sip</a></p>
+<ul>
+  <li>发送ajax请求
+    <ul>
+      <li>
+        <p>但是有一个问题就是，文件内容太大时，请求数据发送不过去，这时候就想发送文件的路径过去，然后再用java分析文件内容。这时候！坑爹的发现，js无法获取文件的完整路径，因为高版本的浏览器内核将文件路径进行了隐藏，格式都变成了c:/fakepath／x.xx的形式，这样就很不易用了（总不能让所有要使用这个工具的人，都去设置一下浏览器安全模式／或者建一个这样的目录吧）。重新找解决方案，然后在<a href="http://ju.outofmemory.cn/entry/138159">这篇文章</a>中发现，filereader是异步读取内容的，那为什么当时会感觉到明显的卡顿呢，或许是因为为了验证是否正确的打开了文件，我用
+  <code class="highlighter-rouge">
+console.log()
+ </code>
+  的方式，打印文件的内容，导致控制台输出大文本内容的时候出现了卡顿。</p>
+      </li>
+      <li>
+        <p>这个过程中，还考虑是不是把文件内容先保存到本地，异步分析后，再删除该文件。</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<p><a href="http://echarts.baidu.com/">绘制图表工具echarts3</a></p>
-
-<p><a href="https://fullcalendar.io/">大日历插件fullcalendar</a></p>
-
+<p>故而，重新修改了实现方式，仍然用filereader的方式，读取文件。哎！之所以这样，就是理解错了<code class="highlighter-rouge">filereader</code>的读取方式！这时候体现了认真读官方文档的重要性！</p>
 
             </article>
         </div>
@@ -236,7 +252,7 @@
             
 
 
-  <div class="ds-thread" data-thread-key="/2016/11/07/some-plugins-in-front-developing/" data-title="一些好用的前端开发插件/工具" data-url="http://localhost:4000/2016/11/07/some-plugins-in-front-developing/"></div>
+  <div class="ds-thread" data-thread-key="/2016/11/10/js-read-file-problem/" data-title="h5打开本地文件－走过的弯路" data-url="http://localhost:4000/2016/11/10/js-read-file-problem/"></div>
 
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"luoyan35714"};
