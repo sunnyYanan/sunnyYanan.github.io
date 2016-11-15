@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>h5打开本地文件－走过的弯路</title>
+	<title>js小知识［持续更新］</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
 
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
-	<link rel="canonical" href="/2016/11/10/js-read-file-problem/">
+	<link rel="canonical" href="/2016/11/10/js-learn/">
 	<link rel="alternate" type="application/rss+xml" title="Less Or More" href="/feed.xml">
 	
 	<meta name="description" content="物必自腐，然后虫生">
@@ -84,7 +84,7 @@
   <div class="container">
   	
   		<!--
-		    <h1>h5打开本地文件－走过的弯路</h1>
+		    <h1>js小知识［持续更新］</h1>
 		    <p>Post on Nov 10, 2016 by <a href="/about">wendy zhang</a></p>
 		-->
 		    <h1>It's our wits that make us men.</h1>
@@ -97,7 +97,7 @@
   <div class="container">
   	
     	<a href="/categories/#前端开发-ref">前端开发</a>	/
-    	<a href="/tag/#文件上传-ref">文件上传</a>
+    	<a href="/tag/#js小知识-ref">js小知识</a>
     
   </div>
 </div>
@@ -205,7 +205,7 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">h5打开本地文件－走过的弯路</h1>
+              <h1 class="post-title">js小知识［持续更新］</h1>
               <!--
                 <p class="post-meta">Nov 10, 2016</p>
               -->
@@ -214,14 +214,17 @@
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">背景</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">问题</a></li>
+  <li><a href="#section" id="markdown-toc-section">打开本地文件</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">文件读取</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">进制转换</a></li>
+  <li><a href="#map" id="markdown-toc-map">map操作</a></li>
+  <li><a href="#js" id="markdown-toc-js">JS动态数组</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">数组排序</a></li>
+  <li><a href="#innerhtmlxxx-xxx" id="markdown-toc-innerhtmlxxx-xxx">innerhtml=xxx， xxx是一个数组对象</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">小数点后保留2位小数</a></li>
 </ul>
 
-<h2 id="section">背景</h2>
-<p>想做个小工具，网页打开一个文件，分析这个文件里的内容，遇到了一些问题。</p>
-
-<h2 id="section-1">问题</h2>
+<h2 id="section">打开本地文件</h2>
 <p>1、使用h5的文件api，具体参照<a href="https://www.html5rocks.com/zh/tutorials/file/dndfiles/">这里</a>，但是由于选择一个文本内容很多的文件的时候，页面有卡顿的现象，故以为js处理读取文件的时候是同步读取的，带着这样的一个假设之后，去寻找异步读取文件的方法。找到的比较好的方法是：</p>
 
 <ul>
@@ -243,6 +246,148 @@ console.log()
 
 <p>故而，重新修改了实现方式，仍然用filereader的方式，读取文件。哎！之所以这样，就是理解错了<code class="highlighter-rouge">filereader</code>的读取方式！这时候体现了认真读官方文档的重要性！</p>
 
+<h2 id="section-1">文件读取</h2>
+
+<p>1、可以选用nodejs的readline方法;</p>
+
+<p>2、单纯用js。</p>
+
+<blockquote>
+  <p>html</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;input id="file" name="file" type="file"&gt;&lt;/input&gt;
+</code></pre>
+</div>
+
+<blockquote>
+  <p>js</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function handleLinkmapFileSelect(evt) {
+    // Check for the various File API support.
+    if (window.File &amp;&amp; window.FileReader &amp;&amp; window.FileList &amp;&amp; window.Blob) {
+        // Great success! All the File APIs are supported.
+        var files = evt.target.files; // FileList object
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            //console.log(typeof(e.target.result));//String
+            
+            var lines = e.target.result.split('\n');
+            for(var line = 0; line &lt; lines.length ; line++){
+                console.log(lines[line]);
+            }
+
+        };
+        reader.readAsText(files[0]);
+
+    } else {
+        toastr.info('The File APIs are not fully supported in this browser.');
+    }
+
+}
+
+document.getElementById('file').addEventListener('change', handleLinkmapFileSelect, false);
+</code></pre>
+</div>
+
+<h2 id="section-2">进制转换</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//十进制转其他  
+var x=110;  
+alert(x);  
+alert(x.toString(8));  
+alert(x.toString(32));  
+alert(x.toString(16));  
+//其他转十进制  
+var x='110';  
+alert(parseInt(x,2));  
+alert(parseInt(x,8));  
+alert(parseInt(x,16));  
+//其他转其他  
+//先用parseInt转成十进制再用toString转到目标进制  
+alert(String.fromCharCode(parseInt(141,8)))  
+alert(parseInt('ff',16).toString(2));   
+</code></pre>
+</div>
+
+<h2 id="map">map操作</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>var map = {}; 
+map["key1"] = "Value1"; // 加入值对 
+map["key2"] = "Value2"; 
+map["key3"] = "Value3"; 
+if("key1" in map) { //判断是否存在 
+  alert("OK"); 
+}
+
+for(var k in map) { // 遍历 
+  alert(k + " = " + map[k]); 
+}
+
+delete map["key1"]; // 删除
+for(var k in map) { // 遍历 
+  alert(k + " = " + map[k]); 
+}
+</code></pre>
+</div>
+
+<h2 id="js">JS动态数组</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>js里的数组的长度是可变的。
+有两种声明方式：
+var a = [];
+或者
+var a = new Array();
+或者指定长度：
+var a = new Array(10);
+比如var a = [];
+a.length等于0
+a.push(1)后则a.length等于1
+
+比如var a = new Array(10);
+a.length等于10
+如果a[12]=1，则a.length等于13了。
+</code></pre>
+</div>
+
+<h2 id="section-3">数组排序</h2>
+<p>你可能看到过这样的js数组排序方法<a href="https://segmentfault.com/a/1190000005717963">方法1</a>，以及<a href="https://my.oschina.net/code33/blog/384085">更简单酷炫的2方法</a>，但是实际应用中发现，当数组元素个数少于100，一层可以显示时，这样排序是没有问题的；但是当数据个数多于100，即数组的层级会自动进行分组，每100为一组，这时，以上2个方法都不好使了，使用<a href="https://github.com/nie-xin/codewars/blob/master/README.md">github上的方法3</a>才正确，github才是正确的参考地方哇！</p>
+
+<h2 id="innerhtmlxxx-xxx">innerhtml=xxx， xxx是一个数组对象</h2>
+<p>首先，用jquery的方法获取id时<code class="highlighter-rouge">$("#test").innerHTML=xx</code>，无法正常工作，需要用</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>document.getElementById("fileName").innerHTML = xxx;
+</code></pre>
+</div>
+
+<p>的方式，如果xxx直接为数组的名称，会发现输出的结果中，每个元素之间都会加入了“,”，此时须用调用.join()方法，修改元素间连接方式，完整示例是：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>document.getElementById("fileName").innerHTML = fileName.join(' ');
+</code></pre>
+</div>
+
+<p>此外，还需要注意，往数组中添加内容时，为了能innerHTML后一行一个元素，需要在数组操作添加时，如xx.push(“a”)，加入&lt;br／&gt;，加”\\n\\r”的方式无效。完整示例：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>xx.push("a&lt;br/&gt;")
+</code></pre>
+</div>
+
+<h2 id="section-4">小数点后保留2位小数</h2>
+<p>1、四舍五入</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var num = 2.4451
+num = num.toFixed(2) // 2.45 
+</code></pre>
+</div>
+<p>2、不四舍五入</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Math.floor(15.7784514000 * 100) / 100  
+// 输出结果为 15.77
+</code></pre>
+</div>
+<p>正则表达式</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Number(15.7784514000.toString().match(/^\d+(?:\.\d{0,2})?/))  
+// 输出结果为 15.77,不能用于整数如 10 必须写为10.0000
+</code></pre>
+</div>
+
             </article>
         </div>
       </div>
@@ -252,7 +397,7 @@ console.log()
             
 
 
-  <div class="ds-thread" data-thread-key="/2016/11/10/js-read-file-problem/" data-title="h5打开本地文件－走过的弯路" data-url="http://localhost:4000/2016/11/10/js-read-file-problem/"></div>
+  <div class="ds-thread" data-thread-key="/2016/11/10/js-learn/" data-title="js小知识［持续更新］" data-url="http://localhost:4000/2016/11/10/js-learn/"></div>
 
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"luoyan35714"};
