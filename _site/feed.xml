@@ -5,8 +5,8 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 14:26:12 +0800</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 14:26:12 +0800</lastBuildDate>
+    <pubDate>Tue, 22 Nov 2016 10:21:08 +0800</pubDate>
+    <lastBuildDate>Tue, 22 Nov 2016 10:21:08 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -20,6 +20,9 @@
   &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;数组排序&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#innerhtmlxxx-xxx&quot; id=&quot;markdown-toc-innerhtmlxxx-xxx&quot;&gt;innerhtml=xxx， xxx是一个数组对象&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;小数点后保留2位小数&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#js-1&quot; id=&quot;markdown-toc-js-1&quot;&gt;JS动态增加表格数据&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#jsjson&quot; id=&quot;markdown-toc-jsjson&quot;&gt;JS处理json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#jquerydatatable&quot; id=&quot;markdown-toc-jquerydatatable&quot;&gt;jquery插件datatable动态更新数据&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;打开本地文件&lt;/h2&gt;
@@ -185,6 +188,36 @@ num = num.toFixed(2) // 2.45
 // 输出结果为 15.77,不能用于整数如 10 必须写为10.0000
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;js-1&quot;&gt;JS动态增加表格数据&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.lai18.com/content/410044.html&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;也可以使用datatables的方式，直接插入。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var t = $('#example').DataTable();
+var counter = 1;
+t.row.add( [
+            counter +'.1',
+            counter +'.2',
+            counter +'.3',
+            counter +'.4',
+            counter +'.5'
+        ] ).draw( false );
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;jsjson&quot;&gt;JS处理json&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/JoannaQ/p/3190879.html&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;jquerydatatable&quot;&gt;jquery插件datatable动态更新数据&lt;/h2&gt;
+&lt;p&gt;先删除原有全部数据，再添加新数据，再生成datatable表。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var dataTable = $('#example').dataTable();
+dataTable.fnClearTable();
+dataTable.fnDraw();
+dataTable.fnDestroy();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/26632332/how-to-clear-datatable-with-onchange-in-jquery/26634006#26634006?newreg=ccb1fed7bf3e4a159104b899c694d6de&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/11/10/js-learn/</link>

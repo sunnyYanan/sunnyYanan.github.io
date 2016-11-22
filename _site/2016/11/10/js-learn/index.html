@@ -222,6 +222,9 @@
   <li><a href="#section-3" id="markdown-toc-section-3">数组排序</a></li>
   <li><a href="#innerhtmlxxx-xxx" id="markdown-toc-innerhtmlxxx-xxx">innerhtml=xxx， xxx是一个数组对象</a></li>
   <li><a href="#section-4" id="markdown-toc-section-4">小数点后保留2位小数</a></li>
+  <li><a href="#js-1" id="markdown-toc-js-1">JS动态增加表格数据</a></li>
+  <li><a href="#jsjson" id="markdown-toc-jsjson">JS处理json</a></li>
+  <li><a href="#jquerydatatable" id="markdown-toc-jquerydatatable">jquery插件datatable动态更新数据</a></li>
 </ul>
 
 <h2 id="section">打开本地文件</h2>
@@ -387,6 +390,36 @@ num = num.toFixed(2) // 2.45
 // 输出结果为 15.77,不能用于整数如 10 必须写为10.0000
 </code></pre>
 </div>
+
+<h2 id="js-1">JS动态增加表格数据</h2>
+<p><a href="http://www.lai18.com/content/410044.html">参考</a></p>
+
+<p>也可以使用datatables的方式，直接插入。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var t = $('#example').DataTable();
+var counter = 1;
+t.row.add( [
+            counter +'.1',
+            counter +'.2',
+            counter +'.3',
+            counter +'.4',
+            counter +'.5'
+        ] ).draw( false );
+
+</code></pre>
+</div>
+
+<h2 id="jsjson">JS处理json</h2>
+<p><a href="http://www.cnblogs.com/JoannaQ/p/3190879.html">参考</a></p>
+
+<h2 id="jquerydatatable">jquery插件datatable动态更新数据</h2>
+<p>先删除原有全部数据，再添加新数据，再生成datatable表。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var dataTable = $('#example').dataTable();
+dataTable.fnClearTable();
+dataTable.fnDraw();
+dataTable.fnDestroy();
+</code></pre>
+</div>
+<p><a href="https://stackoverflow.com/questions/26632332/how-to-clear-datatable-with-onchange-in-jquery/26634006#26634006?newreg=ccb1fed7bf3e4a159104b899c694d6de">参考</a></p>
 
             </article>
         </div>
