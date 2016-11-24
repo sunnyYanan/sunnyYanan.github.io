@@ -5,9 +5,69 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 22 Nov 2016 10:21:08 +0800</pubDate>
-    <lastBuildDate>Tue, 22 Nov 2016 10:21:08 +0800</lastBuildDate>
+    <pubDate>Thu, 24 Nov 2016 15:39:51 +0800</pubDate>
+    <lastBuildDate>Thu, 24 Nov 2016 15:39:51 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>datatable中的插件tabletools使用小结</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;简介：&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;简介：&lt;/h2&gt;
+&lt;p&gt;作为jquery的表格插件，&lt;a href=&quot;https://datatables.net/&quot;&gt;datatable&lt;/a&gt;提供了方便的分类组合，搜索查找，各列排序等功能，是一个非常好的表格展示插件。&lt;/p&gt;
+
+&lt;p&gt;datatable本身还提供了丰富的插件，使表格操作更智能。tabletools就是其中之一。&lt;/p&gt;
+
+&lt;p&gt;一个简单的使用例子如&lt;a href=&quot;https://www.datatables.net/extensions/tabletools/&quot;&gt;官方&lt;/a&gt;，js初始化如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Example initialisation
+$(document).ready( function () {
+    $('#example').dataTable( {
+        &quot;dom&quot;: 'T&amp;lt;&quot;clear&quot;&amp;gt;lfrtip',
+        &quot;tableTools&quot;: {
+            &quot;sSwfPath&quot;: &quot;/swf/copy_csv_xls_pdf.swf&quot;
+        }
+    } );
+} );
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;作者在使用过程中遇到的问题有：&lt;/p&gt;
+
+&lt;p&gt;1、按钮点击无效，原因是swf路径问题，更改为：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$('#example').DataTable( {
+        &quot;dom&quot;: 'T&amp;lt;&quot;clear&quot;&amp;gt;lfrtip',
+        &quot;tableTools&quot;: {
+            &quot;sSwfPath&quot;: &quot;//cdn.datatables.net/tabletools/2.2.4/swf/copy_csv_xls.swf&quot;,
+            &quot;aButtons&quot;: [ &quot;xls&quot; ]
+        }
+    });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2、button自定义以及增加描述，设置abuttons属性。如：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;aButtons&quot;:[
+    {&quot;sExtends&quot;:&quot;copy&quot;, &quot;sButtonText&quot;:&quot;拷贝到粘贴板&quot;},
+    {&quot;sExtends&quot;:&quot;xls&quot;, &quot;sButtonText&quot;:&quot;导出Excel&quot;},
+    {&quot;sExtends&quot;:&quot;print&quot;, &quot;sButtonText&quot;:&quot;打印预览&quot;}
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;附一个比较好的自定义按钮学习推荐：&lt;a href=&quot;http://phpflow.com/php/how-to-export-the-jquery-datatable-data-to-pdf-excel-csv-and-copy/&quot;&gt;http://phpflow.com/php/how-to-export-the-jquery-datatable-data-to-pdf-excel-csv-and-copy/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/24/tabletools-usage/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/24/tabletools-usage/</guid>
+        
+        <category>datatable</category>
+        
+        
+        <category>前端开发</category>
+        
+      </item>
     
       <item>
         <title>js小知识［持续更新］</title>
