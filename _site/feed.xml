@@ -5,9 +5,74 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Nov 2016 15:39:51 +0800</pubDate>
-    <lastBuildDate>Thu, 24 Nov 2016 15:39:51 +0800</lastBuildDate>
+    <pubDate>Fri, 24 Feb 2017 19:56:30 +0800</pubDate>
+    <lastBuildDate>Fri, 24 Feb 2017 19:56:30 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>react学习</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;遇到的问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;过程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;知识点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;遇到的问题&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;npm install -g create-react-app 遇到的问题：Npm Please try using this command again as root/administrator
+    &lt;ul&gt;
+      &lt;li&gt;解决方案：&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chown -R $USER /usr/local&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;过程&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;学习Create React App－－https://github.com/facebookincubator/create-react-app#getting-started&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;知识点&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;a modern build pipeline typically consisits of: a package manager, such as yarn or npm, to manager third-party packages;a bundler, sunch as webpack or browserify, to bundle code into small packages to optimize load time; a compiler such as babel.&lt;/li&gt;
+  &lt;li&gt;building blocks of React apps: elements and components&lt;/li&gt;
+  &lt;li&gt;null—&amp;gt;non-value; undefined—&amp;gt;uninitialized value &lt;strong&gt;[js内容]&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;component
+    &lt;ul&gt;
+      &lt;li&gt;one write style&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+function test(props) {
+return &amp;lt;p&amp;gt;hello,{props.name}&amp;lt;/p&amp;gt;
+}
+ &lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;second write style(ES6)&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+class test extends React.Component {
+  render(){
+return &amp;lt;p&amp;gt;hello, {this.props.name}&amp;lt;/p&amp;gt;
+  }
+}
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 15 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/02/15/react-stuty/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/15/react-stuty/</guid>
+        
+        <category>datatable</category>
+        
+        
+        <category>前端开发</category>
+        
+      </item>
     
       <item>
         <title>datatable中的插件tabletools使用小结</title>

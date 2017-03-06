@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>建立网站过程中遇到的问题</title>
+	<title>react学习</title>
 
 	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
 	<link rel="icon" href="/styles/images/favicon.jpg">
 
 	<link rel="stylesheet" href="/styles/css/index.css">
 	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
-	<link rel="canonical" href="/2016/11/01/build-the-web/">
+	<link rel="canonical" href="/2017/02/15/react-stuty/">
 	<link rel="alternate" type="application/rss+xml" title="Less Or More" href="/feed.xml">
 	
 	<meta name="description" content="物必自腐，然后虫生">
@@ -84,8 +84,8 @@
   <div class="container">
   	
   		<!--
-		    <h1>建立网站过程中遇到的问题</h1>
-		    <p>Post on Nov 01, 2016 by <a href="/about">wendy zhang</a></p>
+		    <h1>react学习</h1>
+		    <p>Post on Feb 15, 2017 by <a href="/about">wendy zhang</a></p>
 		-->
 		    <h1>It's our wits that make us men.</h1>
     
@@ -96,8 +96,8 @@
 <div class="banner">
   <div class="container">
   	
-    	<a href="/categories/#文档-ref">文档</a>	/
-    	<a href="/tag/#教程-ref">教程</a>
+    	<a href="/categories/#前端开发-ref">前端开发</a>	/
+    	<a href="/tag/#datatable-ref">datatable</a>
     
   </div>
 </div>
@@ -235,45 +235,65 @@
       <div class="panel docs-content">
         <div class="wrapper">
             <header class="post-header">
-              <h1 class="post-title">建立网站过程中遇到的问题</h1>
+              <h1 class="post-title">react学习</h1>
               <!--
-                <p class="post-meta">Nov 1, 2016</p>
+                <p class="post-meta">Feb 15, 2017</p>
               -->
-              <div class="meta">Posted on <span class="postdate">Nov 01, 2016</span> By <a target="_blank" href="http://localhost:4000">wendy zhang</a></div>
+              <div class="meta">Posted on <span class="postdate">Feb 15, 2017</span> By <a target="_blank" href="http://localhost:4000">wendy zhang</a></div>
               <br />
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">问题</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">参考网址</a></li>
+  <li><a href="#section" id="markdown-toc-section">遇到的问题</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">过程</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">知识点</a></li>
 </ul>
 
-<h2 id="section">问题</h2>
+<h2 id="section">遇到的问题</h2>
+<ul>
+  <li>npm install -g create-react-app 遇到的问题：Npm Please try using this command again as root/administrator
+    <ul>
+      <li>解决方案：<code class="highlighter-rouge">sudo chown -R $USER /usr/local</code></li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
 
-<p>1、执行jekyll server后运行不起来，提示rouge错误，其实是环境没有配好，重新安装了jekyll后OK</p>
+<h2 id="section-1">过程</h2>
+<ul>
+  <li>学习Create React App－－https://github.com/facebookincubator/create-react-app#getting-started</li>
+</ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install jekyll
-</code></pre>
-</div>
+<h2 id="section-2">知识点</h2>
+<ul>
+  <li>a modern build pipeline typically consisits of: a package manager, such as yarn or npm, to manager third-party packages;a bundler, sunch as webpack or browserify, to bundle code into small packages to optimize load time; a compiler such as babel.</li>
+  <li>building blocks of React apps: elements and components</li>
+  <li>null—&gt;non-value; undefined—&gt;uninitialized value <strong>[js内容]</strong></li>
+  <li>component
+    <ul>
+      <li>one write style</li>
+    </ul>
 
-<p>2、提示未配置分页，解决方式为在_config.yml中配置</p>
+    <p><code class="highlighter-rouge">
+function test(props) {
+return &lt;p&gt;hello,{props.name}&lt;/p&gt;
+}
+ </code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Gems
-gems: [jekyll-paginate]
-</code></pre>
-</div>
+    <ul>
+      <li>second write style(ES6)</li>
+    </ul>
 
-<p>3、markdown解释器，Jekyll默认用maruku来解析markdown语言，由于本模版使用了kramdown解释器（解释数学公式比较快），故而需要安装该解释器，还有一个解释器为rdiscount，可以一并安装上</p>
+    <p><code class="highlighter-rouge">
+class test extends React.Component {
+  render(){
+return &lt;p&gt;hello, {this.props.name}&lt;/p&gt;
+  }
+}
+ </code></p>
+  </li>
+</ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install rdiscount kramdown
-</code></pre>
-</div>
-
-<h2 id="section-1">参考网址</h2>
-
-<p><a href="http://alfred-sun.github.io/blog/2014/12/05/github-pages/">搭建运行配置全教程</a></p>
-
-<p><a href="http://www.uisdc.com/photoshop-matting-techniques">为了更改logo图片使用的ps抠图教程</a></p>
 
             </article>
         </div>
@@ -284,7 +304,7 @@ gems: [jekyll-paginate]
             
 
 
-  <div class="ds-thread" data-thread-key="/2016/11/01/build-the-web/" data-title="建立网站过程中遇到的问题" data-url="http://localhost:4000/2016/11/01/build-the-web/"></div>
+  <div class="ds-thread" data-thread-key="/2017/02/15/react-stuty/" data-title="react学习" data-url="http://localhost:4000/2017/02/15/react-stuty/"></div>
 
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"luoyan35714"};
