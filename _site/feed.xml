@@ -5,15 +5,142 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 24 Feb 2017 19:56:30 +0800</pubDate>
-    <lastBuildDate>Fri, 24 Feb 2017 19:56:30 +0800</lastBuildDate>
+    <pubDate>Wed, 08 Mar 2017 21:07:28 +0800</pubDate>
+    <lastBuildDate>Wed, 08 Mar 2017 21:07:28 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>jquery小技巧</title>
+        <description>
+&lt;p&gt;1、禁止右键点击&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function(){
+	$(document).bind(&quot;contextmenu&quot;,function(e){
+		return false;
+	});
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2、检测浏览器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function(){
+	//target firefox 2 and above
+	if($.browser.mozilla &amp;amp;&amp;amp; $.browser.version&amp;gt;='1.8'){
+
+}
+//target safari
+if($.browser.safari){
+	
+}
+//target chrome
+if($.browser.chrome){
+	
+}
+if($.browser.camino){
+	
+}
+if($.browser.opera){
+	
+}
+if($.browser.msie &amp;amp;&amp;amp; $.browser.version &amp;lt;= 6) {
+	
+}
+if($.browser.msie &amp;amp;&amp;amp; $.browser.version &amp;gt; 6) {
+	
+}
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3、预加载图片&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function(){
+	jQuery.preloadImages = function(){
+	for(var i =0; i&amp;lt;ARGUMENT.LENGTH; jQuery(?&amp;lt;img {i++)&amp;gt;&quot;).attr(&quot;src&quot;, arguments[i]);
+}
+}
+//how to use
+$.preloadImages(&quot;image1.jpg&quot;);
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;4、返回页面顶部&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function() { 
+$('a[href*=#]').click(function() { 
+	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+	&amp;amp;&amp;amp; location.hostname == this.hostname) { 
+		var $target = $(this.hash); 
+		$target = $target.length &amp;amp;&amp;amp; $target || $('[name=' + this.hash.slice(1) +']'); 
+		if ($target.length) { 
+			var targetOffset = $target.offset().top; 
+			$('html,body').animate({scrollTop: targetOffset}, 900); 
+			return false; 
+		}
+ 	} 
+ }); 
+ // how to use 
+ // place this where you want to scroll to 
+ &amp;lt;A name=top&amp;gt;&amp;lt;/A&amp;gt; 
+ // the link 
+ &amp;lt;A href=&quot;#top&quot;&amp;gt;go to top&amp;lt;/A&amp;gt; });
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;5、返回顶部按钮&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Back to top 
+$('a.top').click(function () { 
+$(document.body).animate({scrollTop: 0}, 800); 
+return false; 
+}); 
+&amp;lt;!-- Create an anchor tag --&amp;gt;
+ &amp;lt;a href=&quot;#&quot;&amp;gt;Back to top&amp;lt;/a&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;6、jQuery延时加载功能&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function() { 
+window.setTimeout(function() {
+ // do something 
+ }, 1000); });
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;7、与其它js类库冲突解决方案&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(document).ready(function() { 
+var $jq = jQuery.noConflict();
+ $jq('#id').show(); 
+ });
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.imooc.com/article/8329&quot;&gt;原文章地址&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/03/08/jquery-skills/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/08/jquery-skills/</guid>
+        
+        <category>jquery</category>
+        
+        
+        <category>前端开发</category>
+        
+      </item>
     
       <item>
         <title>react学习</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;遇到的问题&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;过程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;学习过程&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;知识点&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -27,7 +154,7 @@
   &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;过程&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;学习过程&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;学习Create React App－－https://github.com/facebookincubator/create-react-app#getting-started&lt;/li&gt;
 &lt;/ul&gt;

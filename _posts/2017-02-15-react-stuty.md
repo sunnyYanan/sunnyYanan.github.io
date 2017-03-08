@@ -14,7 +14,7 @@ tag: datatable
 
 - 
 
-## 过程
+## 学习过程
 - 学习Create React App－－https://github.com/facebookincubator/create-react-app#getting-started
 
 ## 知识点
