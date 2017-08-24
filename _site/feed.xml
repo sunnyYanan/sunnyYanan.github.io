@@ -5,9 +5,414 @@
     <description>Actually, less is more!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Mar 2017 21:07:28 +0800</pubDate>
-    <lastBuildDate>Wed, 08 Mar 2017 21:07:28 +0800</lastBuildDate>
+    <pubDate>Wed, 05 Jul 2017 15:22:14 +0800</pubDate>
+    <lastBuildDate>Wed, 05 Jul 2017 15:22:14 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>react官网学习教程翻译</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;快速开始&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#lists-and-keys&quot; id=&quot;markdown-toc-lists-and-keys&quot;&gt;列表和关键字－Lists and Keys&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#rendering-multiple-components&quot; id=&quot;markdown-toc-rendering-multiple-components&quot;&gt;渲染多个组件－Rendering Multiple Components&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#basic-list-component&quot; id=&quot;markdown-toc-basic-list-component&quot;&gt;基础列表组件－Basic List Component&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#keys&quot; id=&quot;markdown-toc-keys&quot;&gt;关键字－Keys&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#extracting-components-with-keys&quot; id=&quot;markdown-toc-extracting-components-with-keys&quot;&gt;提取带关键字的组件-Extracting Components with Keys&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#keys-must-only-be-unique-among-siblings&quot; id=&quot;markdown-toc-keys-must-only-be-unique-among-siblings&quot;&gt;关键字必须在兄弟姐妹中唯一-Keys Must Only Be Unique Among Siblings&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#jsxmap-embedding-map-in-jsx&quot; id=&quot;markdown-toc-jsxmap-embedding-map-in-jsx&quot;&gt;在jsx中嵌入map()-Embedding map() in JSX&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#forms&quot; id=&quot;markdown-toc-forms&quot;&gt;表单-forms&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#controlled-components&quot; id=&quot;markdown-toc-controlled-components&quot;&gt;控制的组件-Controlled Components&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/lists-and-keys.html&quot;&gt;官网地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;快速开始&lt;/h1&gt;
+
+&lt;h2 id=&quot;lists-and-keys&quot;&gt;列表和关键字－Lists and Keys&lt;/h2&gt;
+
+&lt;p&gt; 首先，让我们回顾下在javascript中你是如何转换列表的。
+ 给出下面的代码，我们使用map()方法将一个数组numbers的值变为其值的2倍。我们将这个转换结果赋值给变量doubled，并控制台输出它。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const numbers=[1,2,3,4,5];
+const doubled = numbers.map((number)=&amp;gt;number*2);
+console.log(doubled);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 这段代码将会将[2,4,6,8,10]输出到控制台。&lt;/p&gt;
+
+&lt;p&gt; 在react中，将数组转换成列表是基本一样的。&lt;/p&gt;
+
+&lt;h3 id=&quot;rendering-multiple-components&quot;&gt;渲染多个组件－Rendering Multiple Components&lt;/h3&gt;
+
+&lt;p&gt; 你可以创建元素的集合，并使用大括号{}将他们引入jsx中。&lt;/p&gt;
+
+&lt;p&gt; 下面代码中，我们使用map()方法循环numbers数组。对每个元素，返回一个&amp;lt;li&amp;gt;元素。最终，将元素的结果数组赋值给listitems：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&amp;gt;
+  &amp;lt;li&amp;gt;{number}&amp;lt;/li&amp;gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 我们将整个listItems数组包进一个&amp;lt;ul&amp;gt;元素中，将其渲染到dom中：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ReactDOM.render(
+  &amp;lt;ul&amp;gt;{listItems}&amp;lt;/ul&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 这个代码显示1到5的数字列表。&lt;/p&gt;
+
+&lt;h4 id=&quot;basic-list-component&quot;&gt;基础列表组件－Basic List Component&lt;/h4&gt;
+
+&lt;p&gt; 通常，你会在组件中渲染列表。&lt;/p&gt;
+
+&lt;p&gt; 我们可以将之前的例子变成一个组件，这个组件接收一个数组numbers，输出一个无序的元素列表。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&amp;gt;
+    &amp;lt;li&amp;gt;{number}&amp;lt;/li&amp;gt;
+  );
+  return (
+    &amp;lt;ul&amp;gt;{listItems}&amp;lt;/ul&amp;gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &amp;lt;NumberList numbers={numbers} /&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 当你运行这段代码，你会收到一个warning，告诉你列表元素应该有一个关键字。关键字“key”是当你创建元素列表时需要包含的一个特殊的字符串属性。我们在下一节讨论为什么它是重要的。&lt;/p&gt;
+
+&lt;p&gt; 让我们给numbers.map()中的列表元素赋一个关键字，来解决这个字符串丢失问题。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&amp;gt;
+    &amp;lt;li key={number.toString()}&amp;gt;
+      {number}
+    &amp;lt;/li&amp;gt;
+  );
+  return (
+    &amp;lt;ul&amp;gt;{listItems}&amp;lt;/ul&amp;gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &amp;lt;NumberList numbers={numbers} /&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/gaearon/pen/jrXYRR?editors=0011&quot;&gt;在codepen上试一下&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;keys&quot;&gt;关键字－Keys&lt;/h3&gt;
+
+&lt;p&gt; 关键字帮助react区别哪个item元素发生了变化，被加入，或者被删除。关键字应该赋值给数组中的元素，来让这个元素有一个稳定的标示。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&amp;gt;
+  &amp;lt;li key={number.toString()}&amp;gt;
+    {number}
+  &amp;lt;/li&amp;gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 选key最好的方式是使用一个字符串在兄弟元素中唯一的标示当前列表item元素。更常用的，你应该使用数据中id作为key：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const todoItems = todos.map((todo) =&amp;gt;
+  &amp;lt;li key={todo.id}&amp;gt;
+    {todo.text}
+  &amp;lt;/li&amp;gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 当你没有针对渲染的item的稳定id时，最为最后的手段，你可以使用item的索引(index)作为关键字（key）:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const todoItems = todos.map((todo, index) =&amp;gt;
+  // Only do this if items have no stable IDs
+  &amp;lt;li key={index}&amp;gt;
+    {todo.text}
+  &amp;lt;/li&amp;gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 如果items可以重排序，我们不推荐使用索引作为关键字，因为那样会很慢。如果你感兴趣，可以读一下&lt;a href=&quot;https://facebook.github.io/react/docs/reconciliation.html#recursing-on-children&quot;&gt;深度解释为什么关键字是需要的&lt;/a&gt;这篇文章。&lt;/p&gt;
+
+&lt;h3 id=&quot;extracting-components-with-keys&quot;&gt;提取带关键字的组件-Extracting Components with Keys&lt;/h3&gt;
+
+&lt;p&gt;关键字仅在数组环境下有意义。&lt;/p&gt;
+
+&lt;p&gt;例如，如果你提取一个listitem组件，你应该将关键字放在数组的&lt;ListItem&gt;&lt;/ListItem&gt;元素上，而不是放在ListItem里的&amp;lt;li&amp;gt;元素上。&lt;/p&gt;
+
+&lt;p&gt;例子：不正确的关键字使用&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function ListItem(props) {
+  const value = props.value;
+  return (
+    // Wrong! There is no need to specify the key here:
+    &amp;lt;li key={value.toString()}&amp;gt;
+      {value}
+    &amp;lt;/li&amp;gt;
+  );
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&amp;gt;
+    // Wrong! The key should have been specified here:
+    &amp;lt;ListItem value={number} /&amp;gt;
+  );
+  return (
+    &amp;lt;ul&amp;gt;
+      {listItems}
+    &amp;lt;/ul&amp;gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &amp;lt;NumberList numbers={numbers} /&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;例子：正确的关键字使用&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function ListItem(props) {
+  // Correct! There is no need to specify the key here:
+  return &amp;lt;li&amp;gt;{props.value}&amp;lt;/li&amp;gt;;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&amp;gt;
+    // Correct! Key should be specified inside the array.
+    &amp;lt;ListItem key={number.toString()}
+              value={number} /&amp;gt;
+  );
+  return (
+    &amp;lt;ul&amp;gt;
+      {listItems}
+    &amp;lt;/ul&amp;gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &amp;lt;NumberList numbers={numbers} /&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/rthor/pen/QKzJKG?editors=0010s&quot;&gt;codepen上试一下&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;keys-must-only-be-unique-among-siblings&quot;&gt;关键字必须在兄弟姐妹中唯一-Keys Must Only Be Unique Among Siblings&lt;/h3&gt;
+
+&lt;p&gt;数组中使用的关键字需要在兄弟姐妹中唯一。然而他们不需要全局唯一。我们在产生2个不同的数组时，可以使用同样的关键字：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Blog(props) {
+  const sidebar = (
+    &amp;lt;ul&amp;gt;
+      {props.posts.map((post) =&amp;gt;
+        &amp;lt;li key={post.id}&amp;gt;
+          {post.title}
+        &amp;lt;/li&amp;gt;
+      )}
+    &amp;lt;/ul&amp;gt;
+  );
+  const content = props.posts.map((post) =&amp;gt;
+    &amp;lt;div key={post.id}&amp;gt;
+      &amp;lt;h3&amp;gt;{post.title}&amp;lt;/h3&amp;gt;
+      &amp;lt;p&amp;gt;{post.content}&amp;lt;/p&amp;gt;
+    &amp;lt;/div&amp;gt;
+  );
+  return (
+    &amp;lt;div&amp;gt;
+      {sidebar}
+      &amp;lt;hr /&amp;gt;
+      {content}
+    &amp;lt;/div&amp;gt;
+  );
+}
+
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+ReactDOM.render(
+  &amp;lt;Blog posts={posts} /&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/gaearon/pen/NRZYGN?editors=0010&quot;&gt;codepen上试一下&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;关键字对react来说是一种提示，但是他们不传递给组件。如果在组件中你需要同样的值，可以给他起一个别的名字，作为属性（prop）明确地传递出去：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const content = posts.map((post) =&amp;gt;
+  &amp;lt;Post
+    key={post.id}
+    id={post.id}
+    title={post.title} /&amp;gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面的例子，Post组件可以读取props.id，但不能读取props.key。&lt;/p&gt;
+
+&lt;h3 id=&quot;jsxmap-embedding-map-in-jsx&quot;&gt;在jsx中嵌入map()-Embedding map() in JSX&lt;/h3&gt;
+
+&lt;p&gt;上面的例子中我们声明了一个分离的listItems变量，并将其包含入JSX中：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&amp;gt;
+    &amp;lt;ListItem key={number.toString()}
+              value={number} /&amp;gt;
+  );
+  return (
+    &amp;lt;ul&amp;gt;
+      {listItems}
+    &amp;lt;/ul&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;JSX允许在大括号中嵌入任何的表达式，所以我们可以包含map()结果：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    &amp;lt;ul&amp;gt;
+      {numbers.map((number) =&amp;gt;
+        &amp;lt;ListItem key={number.toString()}
+                  value={number} /&amp;gt;
+      )}
+    &amp;lt;/ul&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/gaearon/pen/BLvYrB?editors=0010&quot;&gt;在codepen上试一下&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;有时候这个导致更清晰的代码，但是这种风格也能让人困惑。就像在javascript中，是否为了可读性抽取一个变量取决于你。记住，如果map()内太复杂，就该抽取一个组件。&lt;/p&gt;
+
+&lt;h2 id=&quot;forms&quot;&gt;表单-forms&lt;/h2&gt;
+
+&lt;p&gt;在react中，HTML表单元素不同于其他DOM元素，因为表单元素保有一些内部状态。例如，下面的表单接受一个名字：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form&amp;gt;
+  &amp;lt;label&amp;gt;
+    Name:
+    &amp;lt;input type=&quot;text&quot; name=&quot;name&quot; /&amp;gt;
+  &amp;lt;/label&amp;gt;
+  &amp;lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;当这个用户提交表单时，这个表单有默认的html表单行为，即跳转到一个新页面。如果你在react中想要这个效果，也是可以的。但是在大部分场景下，使用js方法来处理表单的提交，访问用户输入，是更方便的。实现这个效果的标准方式是叫“控制的组件”的技术。&lt;/p&gt;
+
+&lt;h3 id=&quot;controlled-components&quot;&gt;控制的组件-Controlled Components&lt;/h3&gt;
+
+&lt;p&gt;在html中，表单元素如&lt;input /&gt;,&lt;textarea&gt;和&lt;select&gt;通常维护他们自己的状态（state），并且基于用户输入更新这些状态。在react中，可变状态通常保存在组件的状态属性中，只用setState()更新。&lt;/select&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;我们可以使react状态成为“唯一的真理源”来结合两者。然后呈现表单的react组件在之后的用户输入中也控制表单的表现。一个值被react以这种方式控制的表单输入元素，被称为：控制的组件。&lt;/p&gt;
+
+&lt;p&gt;例如，如果我们想要之前的例子提交时，在日志打印出名字。我们可以将这个表单写为控制的组件：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &amp;lt;form onSubmit={this.handleSubmit}&amp;gt;
+        &amp;lt;label&amp;gt;
+          Name:
+          &amp;lt;input type=&quot;text&quot; value={this.state.value} onChange={this.handleChange} /&amp;gt;
+        &amp;lt;/label&amp;gt;
+        &amp;lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&amp;gt;
+      &amp;lt;/form&amp;gt;
+    );
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/gaearon/pen/VmmPgp?editors=0010&quot;&gt;在codepen上试一下&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;由于表格元素上设置了value属性，显示的值将会永远是this.state.value，使得react的状态是‘唯一的真理’。由于每次键盘点击都会触发handleChange，从而更新react状态，显示的值将会随用户输入而更新。&lt;/p&gt;
+
+&lt;p&gt;有了一个控制的组件，每一个状态的突变将会有一个对应的处理方法。这使得修改或验证用户的输入变得很直接。例如，如果我们想强制名字用大写字母编写，我们可以这样写handleChange:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;handleChange(event) {
+  this.setState({value:event.target.value.toUpperCase()});
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;###textarea标签
+在Html中，一个&lt;textarea&gt;元素通过它的孩子定义它的内容：&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;textarea&amp;gt;
+  hello there,this is some text in a text area
+&amp;lt;/textarea&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 25 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/04/25/react-docs/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/25/react-docs/</guid>
+        
+        <category>react</category>
+        
+        
+        <category>前端开发</category>
+        
+      </item>
     
       <item>
         <title>jquery小技巧</title>
@@ -141,7 +546,12 @@ var $jq = jQuery.noConflict();
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;遇到的问题&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;学习过程&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;知识点&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;知识点&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#converting-a-function-to-a-class&quot; id=&quot;markdown-toc-converting-a-function-to-a-class&quot;&gt;&lt;strong&gt;Converting a function to a class&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#lifecycle-control&quot; id=&quot;markdown-toc-lifecycle-control&quot;&gt;lifecycle control&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#handling-events-dom-vs-react&quot; id=&quot;markdown-toc-handling-events-dom-vs-react&quot;&gt;handling events: dom vs. react&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;遇到的问题&lt;/h2&gt;
@@ -187,14 +597,170 @@ return &amp;lt;p&amp;gt;hello, {this.props.name}&amp;lt;/p&amp;gt;
 }
  &lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;components defined as classes have some additional features –&amp;gt; local state is a feature only available to classes.&lt;/li&gt;
+  &lt;li&gt;All React components must act like pure functions with respect to their props–pure functions means that they do not attempt to change their inputs, and always return the same result for the same inputs.&lt;/li&gt;
+  &lt;li&gt;State is similar to props, but it is private and fully controlled by the component.—that means you should always use class rather than function because only class can use state&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;converting-a-function-to-a-class&quot;&gt;&lt;strong&gt;Converting a function to a class&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;1\Create an ES6 class with the same name that extends React.Component.&lt;/p&gt;
+
+&lt;p&gt;2\Add a single empty method to it called render().&lt;/p&gt;
+
+&lt;p&gt;3\Move the body of the function into the render() method.&lt;/p&gt;
+
+&lt;p&gt;4\Replace props with this.props in the render() body.&lt;/p&gt;
+
+&lt;p&gt;5\Delete the remaining empty function declaration.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Clock extends React.Component {
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+        &amp;lt;h2&amp;gt;It is {this.props.date.toLocaleTimeString()}.&amp;lt;/h2&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;lifecycle-control&quot;&gt;lifecycle control&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- like the code, ReactDOM.reader first run, then, -&amp;gt;the Clock constructor-&amp;gt;the Clock render function to draw the dom-&amp;gt;after that, componentDidMount set a timer to call tick every minite, if Clock component is removed from DOM, componentWillUnmout called.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () =&amp;gt; this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      &amp;lt;div&amp;gt;
+        &amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;
+        &amp;lt;h2&amp;gt;It is {this.state.date.toLocaleTimeString()}.&amp;lt;/h2&amp;gt;
+      &amp;lt;/div&amp;gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &amp;lt;Clock /&amp;gt;,
+  document.getElementById('root')
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this.props and this.state may be updated asynchronously, so you cannot rely on their values to calcute the next state&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Wrong
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;to fix this&lt;/code&gt;  use a second form of setState() that accepts a function rather than an object&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Correct--ARROW FUNCTION
+this.setState((prevState, props) =&amp;gt; ({
+  counter: prevState.counter + props.increment
+}));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Correct
+this.setState(function(prevState, props) {
+  return {
+    counter: prevState.counter + props.increment
+  };
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;handling-events-dom-vs-react&quot;&gt;handling events: dom vs. react&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;lowercase vs. camelCase&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pass function as a string vs. as a event handler&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;activateLasers()&quot;&amp;gt;
+  Activate Lasers
+&amp;lt;/button&amp;gt;
+VS.
+&amp;lt;button onClick={activateLasers}&amp;gt;
+  Activate Lasers
+&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;return false to prevent default behavior vs.  call preventDefault explicitly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;a href=&quot;#&quot; onclick=&quot;console.log('The link was clicked.'); return false&quot;&amp;gt;
+  Click me
+&amp;lt;/a&amp;gt;
+
+vs.
+
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
+
+  return (
+    &amp;lt;a href=&quot;#&quot; onClick={handleClick}&amp;gt;
+      Click me
+    &amp;lt;/a&amp;gt;
+  );
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;in JavaScript, true &amp;amp;&amp;amp; expression always evaluates to expression, and false &amp;amp;&amp;amp; expression always evaluates to false. &lt;strong&gt;[JS内容]&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;don’t recommend using indexes for keys if the items can reorder, as that whould be slow&lt;/li&gt;
+  &lt;li&gt;A good rule of thumb is that elements inside the map() call need keys.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Wed, 15 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/15/react-stuty/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/15/react-stuty/</guid>
         
-        <category>datatable</category>
+        <category>react</category>
         
         
         <category>前端开发</category>

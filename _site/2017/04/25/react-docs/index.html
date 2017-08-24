@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>react官网学习教程翻译</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="canonical" href="/2017/04/25/react-docs/">
+	<link rel="alternate" type="application/rss+xml" title="Less Or More" href="/feed.xml">
+	
+	<meta name="description" content="物必自腐，然后虫生">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/categories/">文章分类</a>
+        </li>
+        <li>
+          <a href="/tag">标签分类</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="https://github.com/sunnyYanan">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="https://sunnyyanan.github.io">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+            <li><a href="/feed.xml">RSS订阅</a></li>
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="https://github.com/luoyan35714/LessOrMore.git">源项目</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>react官网学习教程翻译</h1>
+		    <p>Post on Apr 25, 2017 by <a href="/about">wendy zhang</a></p>
+		-->
+		    <h1>It's our wits that make us men.</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#前端开发-ref">前端开发</a>	/
+    	<a href="/tag/#react-ref">react</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+<!--
+    
+      
+      
+      
+      
+
+      
+        <li><a href="#year_2017">2017</a>
+          <ul class="nav">
+            <li><a href="#month_2017_April">April</a></li>
+      
+
+      
+            
+          
+              <li><a href="#month_2017_March">March</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2017_February">February</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+        
+            </ul>
+          </li>
+          <li><a href="#year_2016">2016</a>
+            <ul class="nav">
+              <li><a href="#month_2016_November">November</a></li>
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_August">August</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            </ul>
+          </li>
+      
+    
+-->
+  </ul>
+</div> 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">react官网学习教程翻译</h1>
+              <!--
+                <p class="post-meta">Apr 25, 2017</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Apr 25, 2017</span> By <a target="_blank" href="http://localhost:4000">wendy zhang</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">快速开始</a>    <ul>
+      <li><a href="#lists-and-keys" id="markdown-toc-lists-and-keys">列表和关键字－Lists and Keys</a>        <ul>
+          <li><a href="#rendering-multiple-components" id="markdown-toc-rendering-multiple-components">渲染多个组件－Rendering Multiple Components</a>            <ul>
+              <li><a href="#basic-list-component" id="markdown-toc-basic-list-component">基础列表组件－Basic List Component</a></li>
+            </ul>
+          </li>
+          <li><a href="#keys" id="markdown-toc-keys">关键字－Keys</a></li>
+          <li><a href="#extracting-components-with-keys" id="markdown-toc-extracting-components-with-keys">提取带关键字的组件-Extracting Components with Keys</a></li>
+          <li><a href="#keys-must-only-be-unique-among-siblings" id="markdown-toc-keys-must-only-be-unique-among-siblings">关键字必须在兄弟姐妹中唯一-Keys Must Only Be Unique Among Siblings</a></li>
+          <li><a href="#jsxmap-embedding-map-in-jsx" id="markdown-toc-jsxmap-embedding-map-in-jsx">在jsx中嵌入map()-Embedding map() in JSX</a></li>
+        </ul>
+      </li>
+      <li><a href="#forms" id="markdown-toc-forms">表单-forms</a>        <ul>
+          <li><a href="#controlled-components" id="markdown-toc-controlled-components">控制的组件-Controlled Components</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://facebook.github.io/react/docs/lists-and-keys.html">官网地址</a></p>
+
+<h1 id="section">快速开始</h1>
+
+<h2 id="lists-and-keys">列表和关键字－Lists and Keys</h2>
+
+<p> 首先，让我们回顾下在javascript中你是如何转换列表的。
+ 给出下面的代码，我们使用map()方法将一个数组numbers的值变为其值的2倍。我们将这个转换结果赋值给变量doubled，并控制台输出它。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const numbers=[1,2,3,4,5];
+const doubled = numbers.map((number)=&gt;number*2);
+console.log(doubled);
+</code></pre>
+</div>
+
+<p> 这段代码将会将[2,4,6,8,10]输出到控制台。</p>
+
+<p> 在react中，将数组转换成列表是基本一样的。</p>
+
+<h3 id="rendering-multiple-components">渲染多个组件－Rendering Multiple Components</h3>
+
+<p> 你可以创建元素的集合，并使用大括号{}将他们引入jsx中。</p>
+
+<p> 下面代码中，我们使用map()方法循环numbers数组。对每个元素，返回一个&lt;li&gt;元素。最终，将元素的结果数组赋值给listitems：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li&gt;{number}&lt;/li&gt;
+);
+</code></pre>
+</div>
+
+<p> 我们将整个listItems数组包进一个&lt;ul&gt;元素中，将其渲染到dom中：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ReactDOM.render(
+  &lt;ul&gt;{listItems}&lt;/ul&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<p> 这个代码显示1到5的数字列表。</p>
+
+<h4 id="basic-list-component">基础列表组件－Basic List Component</h4>
+
+<p> 通常，你会在组件中渲染列表。</p>
+
+<p> 我们可以将之前的例子变成一个组件，这个组件接收一个数组numbers，输出一个无序的元素列表。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    &lt;li&gt;{number}&lt;/li&gt;
+  );
+  return (
+    &lt;ul&gt;{listItems}&lt;/ul&gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &lt;NumberList numbers={numbers} /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<p> 当你运行这段代码，你会收到一个warning，告诉你列表元素应该有一个关键字。关键字“key”是当你创建元素列表时需要包含的一个特殊的字符串属性。我们在下一节讨论为什么它是重要的。</p>
+
+<p> 让我们给numbers.map()中的列表元素赋一个关键字，来解决这个字符串丢失问题。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    &lt;li key={number.toString()}&gt;
+      {number}
+    &lt;/li&gt;
+  );
+  return (
+    &lt;ul&gt;{listItems}&lt;/ul&gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &lt;NumberList numbers={numbers} /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<p><a href="https://codepen.io/gaearon/pen/jrXYRR?editors=0011">在codepen上试一下</a></p>
+
+<h3 id="keys">关键字－Keys</h3>
+
+<p> 关键字帮助react区别哪个item元素发生了变化，被加入，或者被删除。关键字应该赋值给数组中的元素，来让这个元素有一个稳定的标示。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  &lt;li key={number.toString()}&gt;
+    {number}
+  &lt;/li&gt;
+);
+</code></pre>
+</div>
+
+<p> 选key最好的方式是使用一个字符串在兄弟元素中唯一的标示当前列表item元素。更常用的，你应该使用数据中id作为key：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const todoItems = todos.map((todo) =&gt;
+  &lt;li key={todo.id}&gt;
+    {todo.text}
+  &lt;/li&gt;
+);
+</code></pre>
+</div>
+
+<p> 当你没有针对渲染的item的稳定id时，最为最后的手段，你可以使用item的索引(index)作为关键字（key）:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const todoItems = todos.map((todo, index) =&gt;
+  // Only do this if items have no stable IDs
+  &lt;li key={index}&gt;
+    {todo.text}
+  &lt;/li&gt;
+);
+</code></pre>
+</div>
+
+<p> 如果items可以重排序，我们不推荐使用索引作为关键字，因为那样会很慢。如果你感兴趣，可以读一下<a href="https://facebook.github.io/react/docs/reconciliation.html#recursing-on-children">深度解释为什么关键字是需要的</a>这篇文章。</p>
+
+<h3 id="extracting-components-with-keys">提取带关键字的组件-Extracting Components with Keys</h3>
+
+<p>关键字仅在数组环境下有意义。</p>
+
+<p>例如，如果你提取一个listitem组件，你应该将关键字放在数组的<ListItem></ListItem>元素上，而不是放在ListItem里的&lt;li&gt;元素上。</p>
+
+<p>例子：不正确的关键字使用</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function ListItem(props) {
+  const value = props.value;
+  return (
+    // Wrong! There is no need to specify the key here:
+    &lt;li key={value.toString()}&gt;
+      {value}
+    &lt;/li&gt;
+  );
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    // Wrong! The key should have been specified here:
+    &lt;ListItem value={number} /&gt;
+  );
+  return (
+    &lt;ul&gt;
+      {listItems}
+    &lt;/ul&gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &lt;NumberList numbers={numbers} /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<p>例子：正确的关键字使用</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function ListItem(props) {
+  // Correct! There is no need to specify the key here:
+  return &lt;li&gt;{props.value}&lt;/li&gt;;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    // Correct! Key should be specified inside the array.
+    &lt;ListItem key={number.toString()}
+              value={number} /&gt;
+  );
+  return (
+    &lt;ul&gt;
+      {listItems}
+    &lt;/ul&gt;
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  &lt;NumberList numbers={numbers} /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<p><a href="https://codepen.io/rthor/pen/QKzJKG?editors=0010s">codepen上试一下</a></p>
+
+<h3 id="keys-must-only-be-unique-among-siblings">关键字必须在兄弟姐妹中唯一-Keys Must Only Be Unique Among Siblings</h3>
+
+<p>数组中使用的关键字需要在兄弟姐妹中唯一。然而他们不需要全局唯一。我们在产生2个不同的数组时，可以使用同样的关键字：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function Blog(props) {
+  const sidebar = (
+    &lt;ul&gt;
+      {props.posts.map((post) =&gt;
+        &lt;li key={post.id}&gt;
+          {post.title}
+        &lt;/li&gt;
+      )}
+    &lt;/ul&gt;
+  );
+  const content = props.posts.map((post) =&gt;
+    &lt;div key={post.id}&gt;
+      &lt;h3&gt;{post.title}&lt;/h3&gt;
+      &lt;p&gt;{post.content}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+  return (
+    &lt;div&gt;
+      {sidebar}
+      &lt;hr /&gt;
+      {content}
+    &lt;/div&gt;
+  );
+}
+
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+ReactDOM.render(
+  &lt;Blog posts={posts} /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<p><a href="https://codepen.io/gaearon/pen/NRZYGN?editors=0010">codepen上试一下</a></p>
+
+<p>关键字对react来说是一种提示，但是他们不传递给组件。如果在组件中你需要同样的值，可以给他起一个别的名字，作为属性（prop）明确地传递出去：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const content = posts.map((post) =&gt;
+  &lt;Post
+    key={post.id}
+    id={post.id}
+    title={post.title} /&gt;
+);
+</code></pre>
+</div>
+
+<p>上面的例子，Post组件可以读取props.id，但不能读取props.key。</p>
+
+<h3 id="jsxmap-embedding-map-in-jsx">在jsx中嵌入map()-Embedding map() in JSX</h3>
+
+<p>上面的例子中我们声明了一个分离的listItems变量，并将其包含入JSX中：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =&gt;
+    &lt;ListItem key={number.toString()}
+              value={number} /&gt;
+  );
+  return (
+    &lt;ul&gt;
+      {listItems}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+</div>
+
+<p>JSX允许在大括号中嵌入任何的表达式，所以我们可以包含map()结果：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    &lt;ul&gt;
+      {numbers.map((number) =&gt;
+        &lt;ListItem key={number.toString()}
+                  value={number} /&gt;
+      )}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+</div>
+
+<p><a href="https://codepen.io/gaearon/pen/BLvYrB?editors=0010">在codepen上试一下</a></p>
+
+<p>有时候这个导致更清晰的代码，但是这种风格也能让人困惑。就像在javascript中，是否为了可读性抽取一个变量取决于你。记住，如果map()内太复杂，就该抽取一个组件。</p>
+
+<h2 id="forms">表单-forms</h2>
+
+<p>在react中，HTML表单元素不同于其他DOM元素，因为表单元素保有一些内部状态。例如，下面的表单接受一个名字：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form&gt;
+  &lt;label&gt;
+    Name:
+    &lt;input type="text" name="name" /&gt;
+  &lt;/label&gt;
+  &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;
+</code></pre>
+</div>
+
+<p>当这个用户提交表单时，这个表单有默认的html表单行为，即跳转到一个新页面。如果你在react中想要这个效果，也是可以的。但是在大部分场景下，使用js方法来处理表单的提交，访问用户输入，是更方便的。实现这个效果的标准方式是叫“控制的组件”的技术。</p>
+
+<h3 id="controlled-components">控制的组件-Controlled Components</h3>
+
+<p>在html中，表单元素如<input />,<textarea>和<select>通常维护他们自己的状态（state），并且基于用户输入更新这些状态。在react中，可变状态通常保存在组件的状态属性中，只用setState()更新。</select></textarea></p>
+
+<p>我们可以使react状态成为“唯一的真理源”来结合两者。然后呈现表单的react组件在之后的用户输入中也控制表单的表现。一个值被react以这种方式控制的表单输入元素，被称为：控制的组件。</p>
+
+<p>例如，如果我们想要之前的例子提交时，在日志打印出名字。我们可以将这个表单写为控制的组件：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;label&gt;
+          Name:
+          &lt;input type="text" value={this.state.value} onChange={this.handleChange} /&gt;
+        &lt;/label&gt;
+        &lt;input type="submit" value="Submit" /&gt;
+      &lt;/form&gt;
+    );
+  }
+}
+</code></pre>
+</div>
+
+<p><a href="https://codepen.io/gaearon/pen/VmmPgp?editors=0010">在codepen上试一下</a></p>
+
+<p>由于表格元素上设置了value属性，显示的值将会永远是this.state.value，使得react的状态是‘唯一的真理’。由于每次键盘点击都会触发handleChange，从而更新react状态，显示的值将会随用户输入而更新。</p>
+
+<p>有了一个控制的组件，每一个状态的突变将会有一个对应的处理方法。这使得修改或验证用户的输入变得很直接。例如，如果我们想强制名字用大写字母编写，我们可以这样写handleChange:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>handleChange(event) {
+  this.setState({value:event.target.value.toUpperCase()});
+}
+</code></pre>
+</div>
+
+<p>###textarea标签
+在Html中，一个<textarea>元素通过它的孩子定义它的内容：</textarea></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;textarea&gt;
+  hello there,this is some text in a text area
+&lt;/textarea&gt;
+</code></pre>
+</div>
+
+            </article>
+        </div>
+      </div>
+      <div class="panel docs-content">
+        <article class="post-content">
+          <div class="wrapper">
+            
+
+
+  <div class="ds-thread" data-thread-key="/2017/04/25/react-docs/" data-title="react官网学习教程翻译" data-url="http://localhost:4000/2017/04/25/react-docs/"></div>
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"luoyan35714"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+ 
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2017 <a href="https://sunnyyanan.github.io"><code>wendy zhang</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme from <a href="http://lesscss.cn/">Less</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/application.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+
+  </body>
+</html>

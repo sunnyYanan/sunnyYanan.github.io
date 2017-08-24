@@ -97,7 +97,7 @@
   <div class="container">
   	
     	<a href="/categories/#前端开发-ref">前端开发</a>	/
-    	<a href="/tag/#datatable-ref">datatable</a>
+    	<a href="/tag/#react-ref">react</a>
     
   </div>
 </div>
@@ -121,7 +121,22 @@
       
         <li><a href="#year_2017">2017</a>
           <ul class="nav">
-            <li><a href="#month_2017_March">March</a></li>
+            <li><a href="#month_2017_April">April</a></li>
+      
+
+      
+            
+          
+              <li><a href="#month_2017_March">March</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
       
 
       
@@ -261,7 +276,12 @@
               <ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">遇到的问题</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">学习过程</a></li>
-  <li><a href="#section-2" id="markdown-toc-section-2">知识点</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">知识点</a>    <ul>
+      <li><a href="#converting-a-function-to-a-class" id="markdown-toc-converting-a-function-to-a-class"><strong>Converting a function to a class</strong></a></li>
+      <li><a href="#lifecycle-control" id="markdown-toc-lifecycle-control">lifecycle control</a></li>
+      <li><a href="#handling-events-dom-vs-react" id="markdown-toc-handling-events-dom-vs-react">handling events: dom vs. react</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="section">遇到的问题</h2>
@@ -307,8 +327,164 @@ return &lt;p&gt;hello, {this.props.name}&lt;/p&gt;
 }
  </code></p>
   </li>
+  <li>components defined as classes have some additional features –&gt; local state is a feature only available to classes.</li>
+  <li>All React components must act like pure functions with respect to their props–pure functions means that they do not attempt to change their inputs, and always return the same result for the same inputs.</li>
+  <li>State is similar to props, but it is private and fully controlled by the component.—that means you should always use class rather than function because only class can use state</li>
 </ul>
 
+<h3 id="converting-a-function-to-a-class"><strong>Converting a function to a class</strong></h3>
+
+<p>1\Create an ES6 class with the same name that extends React.Component.</p>
+
+<p>2\Add a single empty method to it called render().</p>
+
+<p>3\Move the body of the function into the render() method.</p>
+
+<p>4\Replace props with this.props in the render() body.</p>
+
+<p>5\Delete the remaining empty function declaration.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Clock extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.props.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+</div>
+
+<h3 id="lifecycle-control">lifecycle control</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- like the code, ReactDOM.reader first run, then, -&gt;the Clock constructor-&gt;the Clock render function to draw the dom-&gt;after that, componentDidMount set a timer to call tick every minite, if Clock component is removed from DOM, componentWillUnmout called.
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () =&gt; this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(
+  &lt;Clock /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</div>
+
+<ul>
+  <li>this.props and this.state may be updated asynchronously, so you cannot rely on their values to calcute the next state</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Wrong
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">to fix this</code>  use a second form of setState() that accepts a function rather than an object</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Correct--ARROW FUNCTION
+this.setState((prevState, props) =&gt; ({
+  counter: prevState.counter + props.increment
+}));
+</code></pre>
+</div>
+<p><strong>OR</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// Correct
+this.setState(function(prevState, props) {
+  return {
+    counter: prevState.counter + props.increment
+  };
+});
+</code></pre>
+</div>
+
+<h3 id="handling-events-dom-vs-react">handling events: dom vs. react</h3>
+
+<ul>
+  <li>
+    <p>lowercase vs. camelCase</p>
+  </li>
+  <li>
+    <p>pass function as a string vs. as a event handler</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;button onclick="activateLasers()"&gt;
+  Activate Lasers
+&lt;/button&gt;
+VS.
+&lt;button onClick={activateLasers}&gt;
+  Activate Lasers
+&lt;/button&gt;
+</code></pre>
+</div>
+
+<ul>
+  <li>return false to prevent default behavior vs.  call preventDefault explicitly</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;a href="#" onclick="console.log('The link was clicked.'); return false"&gt;
+  Click me
+&lt;/a&gt;
+
+vs.
+
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
+
+  return (
+    &lt;a href="#" onClick={handleClick}&gt;
+      Click me
+    &lt;/a&gt;
+  );
+}
+
+</code></pre>
+</div>
+
+<ul>
+  <li>in JavaScript, true &amp;&amp; expression always evaluates to expression, and false &amp;&amp; expression always evaluates to false. <strong>[JS内容]</strong></li>
+  <li>don’t recommend using indexes for keys if the items can reorder, as that whould be slow</li>
+  <li>A good rule of thumb is that elements inside the map() call need keys.</li>
+</ul>
 
             </article>
         </div>
